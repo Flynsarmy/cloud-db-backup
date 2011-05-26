@@ -25,14 +25,14 @@ GD_PASSWORD=<your google docs password>
 
 
 #Get list of dbs
-LIST=`mysql -u${DB_USER} -h${DB_HOST} INFORMATION_SCHEMA -e "SELECT SCHEMA_NAME FROM SCHEMATA WHERE SCHEMA_NAME !='information_schema';"`
+LIST=`mysql -u${DB_USER} -p${DB_PASS} -h${DB_HOST} INFORMATION_SCHEMA -e "SELECT SCHEMA_NAME FROM SCHEMATA WHERE SCHEMA_NAME !='information_schema';"`
 
 #Loop through list ignoring result table name
 i=0;
 for each in $LIST; do
 	i=$((i+1))
     if [ "$each" != "SCHEMA_NAME" ]; then
-        mysqldump -u${DB_USER} -h${DB_HOST} --opt --single-transaction $each > ${BACKUP_DIR}${DATE}_${each}.sql &
+        mysqldump -u${DB_USER} -p${DB_PASS} -h${DB_HOST} --opt --single-transaction $each > ${BACKUP_DIR}${DATE}_${each}.sql &
     fi
 
     #Only allow up to MAX_THREADS simultaneous threads
