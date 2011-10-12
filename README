@@ -10,6 +10,7 @@ Supported backup types:
 Requirements:
 - MySQL
 - Python 2.6 (for Google Docs, Google Storage)
+- python-gdata (for GOogle Docs)
 - PHP5, php5-cli (For Amazon S3)
 
 Instructions:
