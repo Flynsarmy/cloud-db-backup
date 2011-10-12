@@ -1,0 +1,21 @@
+Flynsarmy Cloud Database Backup
+
+Supported backup types:
+- Local
+- FTP
+- Amazon S3
+- Google Docs
+- Google Storage
+
+Requirements:
+- MySQL
+- Python 2.6 (for Google Docs, Google Storage)
+- PHP5, php5-cli (For Amazon S3)
+
+Instructions:
+- Open backup.sh and change any settings in 'CUSTOMISABLE SETTINGS' section
+- Set a cron or run ./backup as you please. Example cron script included
+
+Notes:
+- The first time you run a google storage backup, unless you already have a
+  ~/.boto file, you'll be asked a few questions.

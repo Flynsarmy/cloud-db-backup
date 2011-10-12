@@ -1,0 +1,9 @@
+2011-10-12:
+- Local backup support
+- FTP support
+- Google storage support!
+- Upped default multithreading from 2 concurrent processes to 12
+- Changed working directory name from 'backups' to 'tmp'
+- Attempt to automatically create working directory if it doesn't already exist
+- Remove all files from working directory instead of just SQL files
+- Only zip once, not once per backup type

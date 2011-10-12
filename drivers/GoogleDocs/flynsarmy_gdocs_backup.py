@@ -22,6 +22,7 @@ __credits__ = "e.bidelman@google.com (Eric Bidelman)"
 import getopt
 import mimetypes
 import os.path
+import inspect
 import sys
 import atom.data
 import gdata.client
@@ -157,7 +158,7 @@ def main():
                            'debug'])
 
   except getopt.error, msg:
-    print '''python flynsarmy_gdocs_backup.py
+    print 'python '+inspect.getfile( inspect.currentframe() )+'''
         --email= [your Google Docs email]
         --password= [your Google Docs password]
         --filepath= [file to upload]
@@ -165,7 +166,7 @@ def main():
         --chunk_size= [size of upload chunks. default is '''+str(default_chunk_size)+''']
         --nossl [disables HTTPS if set]
         --debug [prints debug info if set]'''
-    print ('Example usage: flynsarmy_gdocs_backup.py '
+    print ('Example usage: '+inspect.getfile( inspect.currentframe() )+' '
            '--filepath=/path/to/test.doc --convert --nossl')
     sys.exit(2)
 
