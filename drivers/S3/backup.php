@@ -6,7 +6,7 @@
 	$bucket = $argv[3];
 	$file = $argv[4]; //file name including path
 
-	$s3 = new S3(S3_KEY, S3_SEC_KEY);
+	$s3 = new S3($S3_KEY, $S3_SEC_KEY);
 	$key = basename($file);
 	$contentType ="plain/text";
 
